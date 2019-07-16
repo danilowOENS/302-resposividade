@@ -7,6 +7,7 @@ body{
                             'footer footer footer footer';
 
     grid-template-rows: 40vh 40vh 40vh 40vh;
+    grid-template-columns: 25% 25% 25% 25%;
 }
 
 nav{
@@ -14,21 +15,89 @@ nav{
     background-color: blueviolet;
 
 }
+nav  #mobile {
+    height:100%;
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+nav #desktop{
+    height:100%;
+    width:100%;
+    display:none;
+    align-items:center;
+    justify-content:space-around;
+
+}
+
+nav #desktop a{
+    text-decoration:none;
+    font-size:20pt;
+    font-weight: 700;
+    color: black;
+}
 
 header{
-        grid-area: header;
-        background-color: aqua;
+    grid-area: header;
+    background-image:url(aussie-fries.jpg);
+    background-size: cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+
+
+header h1{
+        font-size: 40pt;        
+        color: palevioletred;
+        font-weight: 900;
+
 }
 
 section{
     grid-area: section;
-    background-color: brown;
+    background-color: limegreen;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 30px;
+}
+
+section p{
+    color:black;
+    font-size:20px;
 }
 
 footer{
-    grid-area: footer;
-    background-color: yellow;
+        grid-area: footer;
+        background-color: yellow;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
 }
+
+footer aside {
+    display: none;
+}
+
+footer div{
+    width: 200px;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+}
+
+footer div a {
+    cursor: pointer;
+}
+
+
 
 
 @media(min-width:786px){
@@ -39,6 +108,13 @@ footer{
                             'header header section section'
                             'footer footer footer footer';
     }
+    nav #desktop{
+        display: flex;
+    }
+    
+    nav #mobile{
+        display: none;
+    }
 }
 
 @media(min-width:1024px){
@@ -48,5 +124,8 @@ footer{
                               'nav nav section section'
                               'header header footer footer'
                              'header header footer footer';
+    }
+    footer aside{
+        display: block;
     }
 }
